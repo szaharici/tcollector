@@ -6,9 +6,8 @@ RUN apk --no-cache add --virtual=.build-dep \
     && apk del .build-dep
 
 # COPY STUFF
-COPY * /tcollector/
-COPY collectors/0/* /tcollector/collectors/0/
-COPY collectors/etc/* /tcollector/collectors/etc/
+COPY tcollector.py entrypoint.sh /tcollector/
+COPY collectors/ /tcollector/collectors/
 #
 RUN chmod +x /tcollector/entrypoint.sh
 
