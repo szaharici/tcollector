@@ -803,12 +803,12 @@ def setup_logging(logfile=DEFAULT_LOG, max_bytes=None, backup_count=None):
     """Sets up logging and associated handlers."""
 
     LOG.setLevel(logging.INFO)
-    if backup_count is not None and max_bytes is not None:
-        assert backup_count > 0
-        assert max_bytes > 0
-        ch = RotatingFileHandler(logfile, 'a', max_bytes, backup_count)
-    else:  # Setup stream handler.
-        ch = logging.StreamHandler(sys.stdout)
+    #if backup_count is not None and max_bytes is not None:
+    #    assert backup_count > 0
+    #    assert max_bytes > 0
+    #    ch = RotatingFileHandler(logfile, 'a', max_bytes, backup_count)
+    #else:  # Setup stream handler.
+    ch = logging.StreamHandler(sys.stdout)
 
     ch.setFormatter(logging.Formatter('%(asctime)s %(name)s[%(process)d] '
                                       '%(levelname)s: %(message)s'))
